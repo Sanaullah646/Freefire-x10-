@@ -1,0 +1,13 @@
+name: Build APK
+on: [push]
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Godot APK
+        uses: barichello/godot-ci@master
+        with:
+          godot_version: 4.2.1
+          export_preset: Android
+          export_debug: true
